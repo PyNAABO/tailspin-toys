@@ -49,6 +49,26 @@ if (!game) {
         </div>
 
         <div class="space-y-4 mt-6">
+          {game.category && game.category.description && game.category.description.trim() && (
+            <section class="rounded-xl border border-slate-700 bg-slate-900/60 p-4" data-testid="game-details-category-section">
+              <h2 class="text-base font-semibold text-slate-100 mb-2">Category</h2>
+              <p class="text-slate-400" data-testid="game-details-category-description">
+                {game.category.description}
+              </p>
+            </section>
+          )}
+
+          {game.publisher && game.publisher.description && game.publisher.description.trim() && (
+            <section class="rounded-xl border border-slate-700 bg-slate-900/60 p-4" data-testid="game-details-publisher-section">
+              <h2 class="text-base font-semibold text-slate-100 mb-2">Publisher</h2>
+              <p class="text-slate-400" data-testid="game-details-publisher-description">
+                {game.publisher.description}
+              </p>
+            </section>
+          )}
+        </div>
+
+        <div class="space-y-4 mt-6">
           <h2 class="text-lg font-semibold text-slate-200 mb-2">About this game</h2>
           <div class="text-slate-400 space-y-4">
             <p data-testid="game-details-description">{game.description}</p>
